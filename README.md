@@ -8,3 +8,9 @@
 ## CSS Grid&Flexbox Layout Part
 
 >You can reach the CSS Flexbox and Grid project here: https://mmertdogann.github.io/Fullstack-Dev-Path/6-CSSGrid&Layout/project
+
+
+
+## DOM Part
+
+>You can reach Background Generator project here: https://mmertdogann.github.io/Fullstack-Dev-Path/8-DOM
