@@ -100,7 +100,7 @@ var sym2 = Symbol('foo');
 var sym3 = Symbol('foo');
 
 sym2 === sym3 //false
-*/
+
 
 //arrow functions
 
@@ -116,3 +116,52 @@ const add2 = (a, b) => a + b; // => means function
 const add3 = (a, b) => {
     return a + b;
 }
+
+
+//Advanced funtions
+
+const first = () => {
+    const greet = 'Hi';
+    const second = () => {
+        alert(greet);
+    }
+    return second;
+}
+
+const newFunc = first();
+newFunc();
+
+//Closures - a function ran. the function executed. It's never going to executed again. BUT it's going remember that here are references to those variables so the child scope always has access to the parent scope.
+
+
+//Currying
+const multiply = (a, b) => a * b;
+const curriedMultiply = (a) => (b) => a * b;
+curriedMultiply(3)(4); //12
+const multiplyBy5 = curriedMultiply(5);
+multiplyBy5(4); //20
+*/
+
+//Compose
+const compose = (f, g) => (a) => f(g(a));
+
+const sum = (num) => num + 1;
+
+compose(sum, sum)(5); //7
+
+
+//Avoiding Side Effects, functional purity.
+//Do not change outside scope's variables (outside of the function) inside the function.
+
+
+
+
+
+
+
+
+
+
+
+
+
