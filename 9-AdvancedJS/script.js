@@ -140,7 +140,6 @@ const curriedMultiply = (a) => (b) => a * b;
 curriedMultiply(3)(4); //12
 const multiplyBy5 = curriedMultiply(5);
 multiplyBy5(4); //20
-*/
 
 //Compose
 const compose = (f, g) => (a) => f(g(a));
@@ -152,13 +151,67 @@ compose(sum, sum)(5); //7
 
 //Avoiding Side Effects, functional purity.
 //Do not change outside scope's variables (outside of the function) inside the function.
+//We do the processes in an exact way. The function always return same output from the same input.
+//Our function is must be imperative (predictable, certain, exact). And not mutate the data.
+// And always return something (no undefined)
+*/
+
+//Advanved arrays
+var array = [1, 2, 10, 16];
+
+const double = []
+const newArray = array.forEach((num) => {
+    
+    double.push(num * 2)
+});
+
+console.log('forEach', double);
 
 
 
+//map
 
+const mapArray = array.map((num) => {
+    return num * 2;
+});
+//If we have single parameter, we can write this map operation like this:
+//const mapArray = array.map(num => num * 2);
 
+// map restrict the operation, it needs to return something
+// forEach is not strict than map operation, it is just iterate and do
+// whatever in the function blog
+// map transforms the array to another array (mapping)
+// in the forEach we cannot return anything so we need to 
+// create an another array and push the values on it
+// in forEach we do a lot of side effects within the functon (console.log, create new array and push and return undefined)
+// but in map operation we just return something and has no side effect, not mutate the data
+console.log('map', mapArray);
 
+//filter
 
+const filterArray = array.filter((num) => {
+    return num > 5;
+});
+//Because of single parameter, we can write like this:
+//const filterArray = array.filter(num => num > 5);
+
+console.log('filter', filterArray);
+
+//reduce
+
+const reduceArray = array.reduce((accumulator, num) => {
+    return accumulator + num;
+}, 0) //accumulator's default value (starter)
+
+//accumulator is something that we can store the information
+//that has happened in the body of the function
+//accumulator is like sum += number, everytime we store the changes on the sum variable
+
+console.log('reduce', reduceArray);
+
+//all the map, filter and reduce operations are pure
+//because every time we do an operation whatever inputs
+// we get in it always return a value and there are no side effects
 
 
 
