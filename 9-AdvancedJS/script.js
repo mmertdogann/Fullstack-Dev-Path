@@ -36,7 +36,7 @@ const obj = {
     wizardLevel: false
 };
 
-//this
+//this and
 const player = obj.player;
 const experience = obj.experience;
 let wizardLevel = obj.wizardLevel;
@@ -154,7 +154,7 @@ compose(sum, sum)(5); //7
 //We do the processes in an exact way. The function always return same output from the same input.
 //Our function is must be imperative (predictable, certain, exact). And not mutate the data.
 // And always return something (no undefined)
-*/
+
 
 //Advanved arrays
 var array = [1, 2, 10, 16];
@@ -214,7 +214,86 @@ console.log('reduce', reduceArray);
 // we get in it always return a value and there are no side effects
 
 
+//Advanced objects
+//reference type
+[] === []; //false
+[1] === [1]; //false
+var object1 = { value: 10 };
+var object2 = object1;
+var object3 = { value: 10 };
+object1 === object2; //true, because same reference
+object1 === object3; //false, different references
+object1.value = 15;
+console.log(object2.value); //15
+console.log(object3.value); //10
 
+//context (where we are within the object), (different than scope)
+//scope vs context
+function b() {
+    let a = 4;
+}
+console.log(a); //reference error,
+//global (root) scope does not know anything about inside the function
+//the function has different scope (its own universe)
+//but in context
+console.log(this); // Window object
+console.log(this === window); //true
+//this means, what is the object environment that we are in right now
+function a() {
+    console.log(this); //Window object
+    //Look at that, it is different than scope. We are still in the windows object
+    //this still refer to the window object, we are inside the window object right now
+}
 
+const object4 = {
+    a: function() {
+        console.log(this); //object4
+    }
+}
+*/
 
+//instantiation (make a copy (instances) of the object and reuse the code)
+class Player {
+    constructor(name, type) {
+        console.log('Player', this);
+        this.name = name;
+        this.type = type;
+    }
+    introcude() {
+        console.log(`Hi I am ${this.name}, I'm a ${this.type}`);
+    }
+}
 
+class Wizard extends Player {
+    constructor(name, type) {
+        super(name, type);
+        console.log('Wizard', this);
+    }
+    play() {
+        console.log(`WEEEEEE I'm a ${this.type}`);
+    }
+}
+
+const wizard1 = new Wizard('Shelly', 'Healer');
+const wizard2 = new Wizard('Shawn', 'Dark Magic');
+
+//Classical Inheritance Before ES6
+// var Player = function (name, type) {
+//     this.name = name;
+//     this.type = type;
+// }
+
+// Player.prototype.introcude = function () {
+//     console.log(`Hi I am ${this.name}, I'm a ${this.type}`);
+// }
+
+// var wizard1 = new Player('Shelly', 'Healer');
+// var wizard2 = new Player('Shawn', 'Dark Magic');
+
+// wizard1.play = function () {
+//     console.log(`WEEEEEE I'm a ${this.type}`);
+// }
+
+// wizard2.play = function () {
+//     console.log(`WEEEEEE I'm a ${this.type}`);
+// }
