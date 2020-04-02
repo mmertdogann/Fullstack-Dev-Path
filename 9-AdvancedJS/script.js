@@ -250,7 +250,7 @@ const object4 = {
         console.log(this); //object4
     }
 }
-*/
+
 
 //instantiation (make a copy (instances) of the object and reuse the code)
 class Player {
@@ -297,3 +297,70 @@ const wizard2 = new Wizard('Shawn', 'Dark Magic');
 // wizard2.play = function () {
 //     console.log(`WEEEEEE I'm a ${this.type}`);
 // }
+
+
+ //Copying arrays
+var c = [1,2,3,4,5];
+var d= [].concat(c);
+d.push(1995);
+console.log(c); //[1,2,3,4,5]
+console.log(d); //[1,2,3,4,5,1995]
+
+//Copying objects
+let obj = {a: 'a', b: 'b', c: 'c'};
+let clone = Object.assign({}, obj);
+let clone2 = {...obj}; //same thing (clonning obj)
+
+obj.c = 5;
+console.log(obj);   //  {a: 'a', b: 'b', c: 'c'}
+console.log(clone);  //  {a: 'a', b: 'b', c: 5}
+console.log(clone2);  //  {a: 'a', b: 'b', c: 5}
+
+
+//Deep copy
+let obj = {
+    a: 'a', 
+    b: 'b', 
+    c: {
+        deep: 'try and copy me'
+    }
+};
+//Shallow clone (It is only clone the first level)
+let clone = Object.assign({}, obj);
+let clone2 = {...obj}; //same thing (clonning obj)
+//Deep Clone (copy)
+let superClone = JSON.parse(JSON.stringify(obj)) //JSON.stringify convert everything in the object to string
+
+obj.c.deep = 'hahaha';
+console.log(obj);    // {a: 'a', b: 'b', c: { deep: 'hahaha' } }
+console.log(clone);  // {a: 'a', b: 'b', c: { deep: 'hahaha' } }
+console.log(clone2); // {a: 'a', b: 'b', c: { deep: 'hahaha' } }
+console.log(superClone); // {a: 'a', b: 'b', c: { deep: 'try and copy me' } }
+
+//If the object that deep copied is a extremely big object; it may cause performance issue
+
+//Type Coercion (Converting types to equivalent values) (==)
+1 == '1' //true    (1 == 1)
+1 === '1' //false (compare the values without coerce)
+if (1) { //Always true (transform 1 to true)
+    console.log(5);
+}
+1 == [1] //true
+0 == false //true
+0 == "" //true
+"true" == true //false
+1 == "true" //false
+1 == true //true
+
+-0 === +0 //true
+Object.is(-0,+0) //false
+NaN === NaN //false (Not a Number)
+Object.is(NaN, NaN) //true
+
+*/
+
+
+
+
+
+
