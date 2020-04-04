@@ -357,10 +357,59 @@ Object.is(-0,+0) //false
 NaN === NaN //false (Not a Number)
 Object.is(NaN, NaN) //true
 
+
+//ES7 - includes method (for strings and arrays)
+'Hellooooo'.includes('o'); //true
+const pets = ['cat', 'dog', 'bat'];
+pets.includes('dog'); //true
+
+//ES7 - Exponential operator
+const square = (x) => x**2;
+square(5); //25
+
+
+//ES8 - String padding
+'Turtle'.padStart(10); //It makes spaces (6) beginning of the stringincludes the string (total 10 character)
+//'    Turtle'
+'Turtle'.padEnd(10); //It makes spaces (6) end of the stringincludes the string (total 10 character)
+//'Turtle    '
+
+//ES8 - Ending comma
+const fun = (a,b,c,d,) => {
+    console.log(a);
+}
+
+fun(1,2,3,4,); // Output: 1
+
+//ES8 - Extra methods on the Objects
+//Iterate through on the objects
+Object.values  //New way
+Object.entries //New way
+Object.keys    //Old way
+
+let obj = {
+    username0 : 'Santa',
+    username1: 'Rudolf',
+    username2: 'Mr.Grinch'
+};
+//Before ES8
+Object.keys(obj).forEach((key, index) => {  //Iterate 1 by 1 like an array
+    console.log(key, obj[key]);
+}); 
+
+//After ES8
+Object.values(obj).forEach(value => { //Just get the values in the object ('Santa', 'Rudolf', 'Mr.Grinch')
+    console.log(value);
+});
+
+Object.entries(obj).forEach(value => { //Get an array of key and value pairs ["username0, "Santa"], ["username1, "Rudolf"], ["username2, "Mr. Grinch"]
+    console.log(value);
+});
+
+Object.entries(obj).map(value => {
+    return value[1] + value[0].replace('username', '');
+});
+
+//ES8 - Async Await (We will cover these topics next lectures)
+
 */
-
-
-
-
-
-
