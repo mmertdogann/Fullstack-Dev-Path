@@ -412,4 +412,46 @@ Object.entries(obj).map(value => {
 
 //ES8 - Async Await (We will cover these topics next lectures)
 
+
+
+//ES10 - .flat() use on arrays
+
+const array = [1, [2, 3], [4, 5]];
+array.flat(); //[1, 2, 3, 4, 5]
+
+const array2= [1, 2,[3,4,[5]]];
+array2.flat(); //[1,2,3,4, Array(1)]  (only 1, 2,3 and 4 flatted. 5 will stay in a single array because its inside of inside of an array (2 layer deeper)) Like this: [1,2,3,4,[5]]
+array2.flat(2); // [1,2,3,4,5] because we use 2 value with the flat method to flat 2 layer deeper
+
+//Use flat to clean up the data
+const entries = ['bob', 'sally',,,,,,,, 'cindy']; //commas are empty values
+entries.flat(); // ['bob', 'sally', 'cindy']
+
+//ES10 - flatMap() it adds a creature into the array that will be flatten
+const arrayChaos = array.flatMap(creature => creature + 'XD'); //["1XD", "2,3XD", "4,5XD"]
+const arrayChaos2 = array2.flatMap(creature => creature + 'XD'); //["1XD", "2XD", "3,4,5XD"]
+
+//ES10 - trimStart() and trimEnd()
+
+const userEmail = '       eddytheeagle@gmail.com';
+const userEmail2 = 'johnnydangerous@gmail        ';
+userEmail.trimStart(); // "eddytheeagle@gmail.com"
+userEmail2.trimEnd();  // "johnnydangerous@gmail"
 */
+//ES10 - fromEntries() It transforms a list of key value pairs into an object
+const userProfiles = [['commanderTom', 23], ['derekZlander', 40], ['hansel', 18]];
+const obj = Object.fromEntries(userProfiles); // ({commanderTom: 23, derekZlander: 40, hansel: 18})
+//It transformed the array into an object
+//Make opposite (Transform key value pairs in the object to an array)
+Object.entries(obj); //[['commanderTom', 23], ['derekZlander', 40], ['hansel', 18]];
+
+//ES10 try-catch block
+try {
+    4 + 5
+} catch { // Before ES10 we have to write catch (error) (error: Error Type)
+
+}
+
+
+
+
