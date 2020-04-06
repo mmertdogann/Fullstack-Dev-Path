@@ -502,13 +502,53 @@ const flattened = [[0,1], [2,3], [4,5]].reduce(
     }, []);
 //Result: [0,1,2,3,4,5]
 
-*/
 //Asynchronous Programming
 console.log('1');
 setTimeout(() => {
     console.log('2');
 }, 2000)
 console.log('3');
+*/
+
+// IIFE (Good)
+
+//js1 first file loaded
+var myApp = {} //Into the windows object
+
+//js2
+(function() {
+    myApp.add = function(a,b) { //Into the its own scope (It reduces the global namespace)
+        return a + b;           //It does not resolve Dependency Resolution
+    }
+})();
+
+//jquery uses this: allows us to use $
+
+
+
+// CommonJS + Browserify (Better)  (Dump all the js files into the whole single js file)
+// js1                    (It solves Dependency Resolution)
+module.exports = function add(a, b) {
+    return a + b;
+}
+//js2
+var add = require('./add'); //We are assuming the js1 file is called add.js
+
+
+//ES6 + Webpack2 (Best)
+
+//js1
+export const add = (a,b) => a + b;
+//or
+export default function add() {
+    return a + b;
+}
+
+//js2
+import { add } from './add';
+//or
+import add from './add';
+
 
 
 
