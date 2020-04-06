@@ -437,7 +437,7 @@ const userEmail = '       eddytheeagle@gmail.com';
 const userEmail2 = 'johnnydangerous@gmail        ';
 userEmail.trimStart(); // "eddytheeagle@gmail.com"
 userEmail2.trimEnd();  // "johnnydangerous@gmail"
-*/
+
 //ES10 - fromEntries() It transforms a list of key value pairs into an object
 const userProfiles = [['commanderTom', 23], ['derekZlander', 40], ['hansel', 18]];
 const obj = Object.fromEntries(userProfiles); // ({commanderTom: 23, derekZlander: 40, hansel: 18})
@@ -451,6 +451,86 @@ try {
 } catch { // Before ES10 we have to write catch (error) (error: Error Type)
 
 }
+
+
+//Javascript Loops
+
+const basket = ['apples', 'oranges', 'grapes'];
+const detailedBasket = {
+    apples: 5,
+    oranges: 10,
+    grapes: 1000
+};
+//forEach
+basket.forEach(item => {
+    console.log(item);
+})
+
+//for of (iterating)  Iterables: Arrays, Strings
+for (item of basket) {
+    console.log(item);
+}
+
+//for in  (works with objects) It works with object properties
+//We are not iterating, we are enumerating (for objects)
+for (item in detailedBasket) {
+    console.log(item);
+} 
+
+//Objects are not iterable
+for (item of detailedBasket) {
+    console.log(item); //It will not work
+} 
+
+//Under the hood we think of JS arrays like object
+for (item in basket) {
+    console.log(item); // 0 1 2
+} 
+//Like this
+basket = {
+    0: 'apples',
+    1: 'oranges',
+    2: 'grapes'
+}
+
+//Debugging
+const flattened = [[0,1], [2,3], [4,5]].reduce(
+    (accumulator, array) => {
+        debugger;
+        return accumulator.concat(array);
+    
+    }, []);
+//Result: [0,1,2,3,4,5]
+
+*/
+//Asynchronous Programming
+console.log('1');
+setTimeout(() => {
+    console.log('2');
+}, 2000)
+console.log('3');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
