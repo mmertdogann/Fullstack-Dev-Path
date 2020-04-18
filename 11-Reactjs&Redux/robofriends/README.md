@@ -1,6 +1,6 @@
 # robofriends
 
-This project is the part of the [Udemy](https://www.udemy.com/course/the-complete-web-developer-zero-to-mastery/) course.
+This React project is the part of the [Udemy](https://www.udemy.com/course/the-complete-web-developer-zero-to-mastery/) course.
 
 To run the project:
 
