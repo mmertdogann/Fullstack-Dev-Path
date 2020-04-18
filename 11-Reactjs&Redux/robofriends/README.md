@@ -1,6 +1,6 @@
 # robofriends
 
-This is a funny React project that is the part of the [Udemy](https://www.udemy.com/course/the-complete-web-developer-zero-to-mastery/) course.
+This is a funy React project that is the part of the [Udemy](https://www.udemy.com/course/the-complete-web-developer-zero-to-mastery/) course.
 
 To run the project:
 
