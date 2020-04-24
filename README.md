@@ -22,7 +22,7 @@
 
 ## Final Project
 
->You can reach source code of the frontend part of the project here: https://github.com/mmertdogann/smart-brain/tree/master/src
+>You can reach source code of the frontend part of the project here: https://github.com/mmertdogann/smart-brain
 
 >You can reach source code of the backend part of the project here: https://github.com/mmertdogann/smart-brain-api
 
