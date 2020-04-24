@@ -26,4 +26,4 @@
 
 >You can reach source code of the backend part of the project here: https://github.com/mmertdogann/smart-brain-api
 
->You can reach the website here: https://mmertdogann.github.io/Fullstack-Dev-Path/8-DOM
+>You can reach the website here: https://facefication.herokuapp.com/
